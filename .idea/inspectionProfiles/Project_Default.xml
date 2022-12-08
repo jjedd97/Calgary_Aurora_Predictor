@@ -1,0 +1,57 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyCompatibilityInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ourVersions">
+        <value>
+          <list size="2">
+            <item index="0" class="java.lang.String" itemvalue="2.7" />
+            <item index="1" class="java.lang.String" itemvalue="3.10" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="26">
+            <item index="0" class="java.lang.String" itemvalue="protobuf" />
+            <item index="1" class="java.lang.String" itemvalue="scikit-learn" />
+            <item index="2" class="java.lang.String" itemvalue="tabulate" />
+            <item index="3" class="java.lang.String" itemvalue="python-dateutil" />
+            <item index="4" class="java.lang.String" itemvalue="numpy" />
+            <item index="5" class="java.lang.String" itemvalue="requests" />
+            <item index="6" class="java.lang.String" itemvalue="influxdb" />
+            <item index="7" class="java.lang.String" itemvalue="XlsxWriter" />
+            <item index="8" class="java.lang.String" itemvalue="starlette" />
+            <item index="9" class="java.lang.String" itemvalue="s3fs" />
+            <item index="10" class="java.lang.String" itemvalue="uvicorn" />
+            <item index="11" class="java.lang.String" itemvalue="xlrd" />
+            <item index="12" class="java.lang.String" itemvalue="Flask" />
+            <item index="13" class="java.lang.String" itemvalue="scipy" />
+            <item index="14" class="java.lang.String" itemvalue="pydantic" />
+            <item index="15" class="java.lang.String" itemvalue="forecast_models" />
+            <item index="16" class="java.lang.String" itemvalue="progressbar2" />
+            <item index="17" class="java.lang.String" itemvalue="python-multipart" />
+            <item index="18" class="java.lang.String" itemvalue="gunicorn" />
+            <item index="19" class="java.lang.String" itemvalue="slack-logger" />
+            <item index="20" class="java.lang.String" itemvalue="pandas" />
+            <item index="21" class="java.lang.String" itemvalue="boto3" />
+            <item index="22" class="java.lang.String" itemvalue="fastapi" />
+            <item index="23" class="java.lang.String" itemvalue="configargparse" />
+            <item index="24" class="java.lang.String" itemvalue="lightgbm" />
+            <item index="25" class="java.lang.String" itemvalue="rate_api_pricing" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="battman.src.tests.test_pricing_manager.pricing" />
+          <option value="scripts.deployment.staging.migrate_salt_key_to_site_config_db.migrate_salt_key_data" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
