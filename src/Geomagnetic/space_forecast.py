@@ -25,3 +25,27 @@ def get_27_day_forecast():
     forecast_table = tables[0]
     logging.debug(f" forecast returned: {forecast_table}")
     return forecast_table
+
+def get_6_hour_forecast(mapname: str ="northernprairies"):
+    """
+    This function returns a pandas data frame with 6 hour prediction of solar activity
+    :param mapname: string representing the regions. Calgary is in northernprairies but southwestern may be of interest as well
+    :return: dataframe of this web data
+    """
+    url="https://www.spaceweather.gc.ca/forecast-prevision/short-court/regional/sr-1-en.php?region=mea&mapname="
+    tables = pd.read_html(url + mapname)  # Returns list of all tables on page
+    forecast_table = tables[1]
+    logging.debug(f" forecast returned: {forecast_table}")
+    return forecast_table
+
+def get_24_hour_forecast():
+    """
+    This function returns a pandas data frame with 6 hour prediction of solar activity
+    :return: dataframe of this web data
+    """
+    url="https://www.spaceweather.gc.ca/forecast-prevision/short-court/zone-en.php"
+    tables = pd.read_html(url)  # Returns list of all tables on page
+    forecast_table = tables[0]
+    logging.debug(f" forecast returned: {forecast_table}")
+    return forecast_table
+
