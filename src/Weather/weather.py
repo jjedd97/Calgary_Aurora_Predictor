@@ -16,7 +16,7 @@ logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 
 BaseURL = 'http://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/weatherdata/'
 
-if len(sys.argv) < 4:
+if len(sys.argv) < 3:
     print('')
     print('Usage: Location QueryType API_KEY FROMDATE TODATE')
     print()
@@ -27,8 +27,8 @@ if len(sys.argv) < 4:
     print('  API_KEY: Please specify your Visual Crossing Weather API Key')
     print('    If you don\'t already have an API Key, sign up for one at https://www.visualcrossing.com/weather-api.')
     print()
-    print('Example: \"Herndon, VA\" HISTORY YOUR_API_KEY 2019-01-01 2019-01-07')
-    print('Example: \"Beverly Hills, CA\" FORECAST YOUR_API_KEY')
+    print('Example: \"Herndon, VA\" HISTORY 2019-01-01 2019-01-07')
+    print('Example: \"Beverly Hills, CA\" FORECAST')
     print()
     sys.exit()
 
