@@ -1,7 +1,7 @@
 import gzip
 import logging
 import os.path
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from io import StringIO
 
 import geopy
@@ -70,3 +70,18 @@ def get_data_from_file(desired_date: date, folder="./Meanook"):
         logging.warning("No observatory data")
         return pd.DataFrame(index=[str(desired_date)], data={"DOY": None, "MEAX": None, "MEAY": None,
                     "MEAZ": None})
+
+
+def get_min_max_space_data(start_date=date(year=2015, month=1, day=1), end_date=date(year=2021,month=11, day=30), folder="./Meanook"):
+    current_date = start_date
+    all_data = None
+    while current_date <= end_date:
+        if all_data is not None:
+            all_data = all_data.append(get_data_from_file(current_date, folder=folder))
+        else:
+            all_data = get_data_from_file(current_date, folder=folder)
+        current_date = current_date + timedelta(days=1)
+
+    return all_data.agg(['min', 'max'])
+
+
