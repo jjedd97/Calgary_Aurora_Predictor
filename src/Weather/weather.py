@@ -1,4 +1,5 @@
 #Downloading weather data using Python as a CSV using the Visual Crossing Weather API
+# alt https://calgary.weatherstats.ca/download.html
 #See https://www.visualcrossing.com/resources/blog/how-to-load-historical-weather-data-using-python-without-scraping/ for more information.
 import logging
 
@@ -54,7 +55,7 @@ if QueryType == 'FORECAST':
     log.info(' - Fetching forecast data')
     QueryTypeParams = 'forecast?&aggregateHours=24&unitGroup=us&shortColumnNames=false'
 else:
-    log.info(' - Fetching history for date: ', FromDateParam,'-',ToDateParam)
+    log.info(f' - Fetching history for date: {FromDateParam},-{ToDateParam}')
 
     # History requests require a date.  We use the same date for start and end since we only want to query a single date in this example
     QueryDate = '&startDateTime=' + FromDateParam + 'T00:00:00&endDateTime=' +ToDateParam + 'T00:00:00'

@@ -19,7 +19,6 @@ def days_to_full_moon(date, moons):
         return None
     for i in range(len(moons)):
         if moons[i][0] < date and moons[i+1][0]> date :
-            print(moons[i])
             delta = moons[i+1][0] - date
             return delta.days
 
