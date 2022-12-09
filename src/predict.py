@@ -25,8 +25,8 @@ def cal_weights():
     total = moon_deviation + weather_deviation
     # give geo 80% of weight using human knowledge
     geo_pie = 0.8
-    moon_pie = moon_deviation/total * 0.2
-    weather_pie = weather_deviation/total * 0.2
+    moon_pie =(1- moon_deviation/total) * 0.2
+    weather_pie = (1-weather_deviation/total) * 0.2
 
     total_pie = moon_pie + geo_pie + weather_pie
     moon_weight = moon_pie/total_pie
