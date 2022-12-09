@@ -1,6 +1,11 @@
+import gzip
 import logging
+import os.path
+from datetime import date, datetime
+from io import StringIO
 
 import geopy
+import pandas as pd
 import requests
 from geopy.geocoders import Nominatim
 from geopy import distance
@@ -35,3 +40,33 @@ def find_closest_observatory(city_name: str = "Calgary"):
             logging.debug("name wasn't a city")
     return closest
 
+def get_data_from_file(desired_date: date, folder="./Meanook"):
+    if isinstance(desired_date, str):
+        desired_date = datetime.strptime(desired_date, '%Y-%m-%d').date()
+    if desired_date.year < 2017:
+        modifier = "dmin.min.gz"
+    elif desired_date.year == 2017:
+        modifier = "vmin.min.gz"
+    else:
+        modifier = "vmin.min"
+    path = folder + "/" + str(desired_date.year) + "/" + "mea"+desired_date.strftime('%Y%m%d')+ modifier
+    if os.path.exists(path):
+        if modifier.split(".")[-1] == "gz":
+            with gzip.open(path, 'r') as file:
+                data = file.read().decode("utf-8")
+                data = "DATE" + data.split("DATE")[1]
+            data = StringIO(data)
+        else:
+            with open(path, 'r') as file:
+                data = file.read()
+                data = "DATE" + data.split("DATE")[1]
+            data = StringIO(data)
+
+        df = pd.read_csv(data, sep='\s+', index_col=0)
+        averages = pd.DataFrame(index=[str(desired_date)], data={"DOY": df["DOY"].mean(), "MEAX": df["MEAX"].mean(), "MEAY": df["MEAY"].mean(),
+                    "MEAZ":df["MEAZ"].mean()})
+        return averages
+    else:
+        logging.warning("No observatory data")
+        return pd.DataFrame(index=[str(desired_date)], data={"DOY": None, "MEAX": None, "MEAY": None,
+                    "MEAZ": None})

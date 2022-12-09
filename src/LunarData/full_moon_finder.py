@@ -14,6 +14,8 @@ def get_full_moons(start_year=2015, end_year=2025):
     return moons
 
 def days_to_full_moon(date, moons):
+    if isinstance(date, str):
+        date = datetime.datetime.strptime(date, "%Y-%m-%d").date()
     if date > moons[-1][0]:
         logging.info("not enough moon data")
         return None
