@@ -1,0 +1,47 @@
+(Le français suit.)
+
+-= Geological Survey of Canada (GSC) Conditions Of Use =-
+    
+The Geomagnetic data available through this site are provided for your 
+use (and for the use of colleagues collaborating on the same project) 
+and are not for sale or distribution by you to third parties, without 
+the express written permission of the Geological Survey of Canada (GSC). 
+Any report or publication that makes use of these data should acknowledge 
+the Geological Survey of Canada as the source. One copy of each report or 
+publication should be sent to the GSC.
+
+We ask that the data not be used for commercial purposes, nor in any project 
+in which you, your organization, or your collaborators are in a commercial 
+agreement with any third party. Commercial users should contact the GIN manager.
+
+Lorne McKee
+GIN manager / Physical Scientist, Geomagnetism, ESS/GSC-AWCB/CHIS
+Natural Resources Canada
+2617 Anderson Road
+Ottawa, ON
+Canada
+K1A 0Y3
+    
+================================================================================
+
+-= Commission géologique du Canada (CGC) Conditions d'utilisation =-
+
+Les données géomagnétiques disponibles sur ce site sont réservées à votre usage 
+personnel (ou à celui de vos collègues qui participent au même projet). Elles 
+ne doivent être ni vendues, ni distribuées à des parties tierces sans l'autorisation 
+expresse par écrit de la Commission géologique du Canada (CGC). Si vous les utilisez 
+dans des rapports ou des publications, vous devez indiquer leur source, à savoir la 
+Commission géologique du Canada, et envoyer un exemplaire de tous ces documents à la CGC.
+
+Nous vous demandons de ne pas vous servir de ces données à des fins commerciales ou dans 
+le cadre de projets pour lesquels votre organisme ou vos collaborateurs ont conclu 
+un accord commercial avec une tierce partie. Les utilisateurs commerciaux doivent 
+s'adresser au gestionnaire de GIN.
+
+Lorne McKee
+GIN manager / Scientifique, physique-géomagnetisme, SST/CGC-DOAC/SIDNC
+Ressources naturelles Canada
+2617 Anderson Road
+Ottawa, ON
+Canada
+K1A 0Y3
