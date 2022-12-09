@@ -22,10 +22,12 @@ def cal_weights():
     geo_deviation = (grading["DOY"]["std"]+grading["MEAX"]["std"]+grading["MEAY"]["std"]+grading["MEAZ"]["std"])/4
     weather_deviation = (grading['avg_visibility']['std']+grading['avg_hourly_cloud_cover_8']["std"])/2
 
-    total = moon_deviation*5 + geo_deviation/5 + weather_deviation*5
-    moon_pie = (1-((moon_deviation*5)/total))
-    geo_pie = (1-((geo_deviation/5) /total))
-    weather_pie = (1- ((weather_deviation*5) /total))
+    total = moon_deviation + weather_deviation
+    # give geo 80% of weight using human knowledge
+    geo_pie = 0.8
+    moon_pie = moon_deviation/total * 0.2
+    weather_pie = weather_deviation/total * 0.2
+
     total_pie = moon_pie + geo_pie + weather_pie
     moon_weight = moon_pie/total_pie
     geo_weight = geo_pie/total_pie
@@ -44,6 +46,5 @@ moon_data = geomatic_data.index.to_series().apply(days_to_full_moon, moons=moons
 geomatic_data["days_to_full_moon"] = moon_data
 
 all_data = geomatic_data.join(weather_data)
-print(all_data)
 m,g,w, = cal_weights()
 cal_final_predictions(m,g,w, all_data)
